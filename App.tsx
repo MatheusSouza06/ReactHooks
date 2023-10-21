@@ -8,7 +8,7 @@ export default function App() {
   const [name, setName] = useState("Matheus")
   const [number, setNumber] = useState(1)
   const changeNumber = () => {
-    setNumber( number + 1)
+    setNumber( number * number)
     setNumber((prevNumber) => prevNumber + 1)
   }
 
@@ -19,6 +19,10 @@ export default function App() {
   useEffect(() => {
     console.log("Número alterado.")
   },[number])
+
+  useEffect(() => {
+    console.log("Só executa uma vez.")
+  },[])
 
   return (
     <View style={styles.container}>
