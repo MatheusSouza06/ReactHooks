@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput} from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import { useState } from 'react';
 
 
@@ -7,6 +7,11 @@ export default function App() {
 
   const [name, setName] = useState("Matheus")
   const [number, setNumber] = useState(1)
+  const changeNumber = () => {
+    // setNumber( number + 1)
+    setNumber((prevNumber) => prevNumber + 1)
+    setNumber((prevNumber) => prevNumber + 1)
+  }
 
   return (
     <View style={styles.container}>
@@ -15,10 +20,15 @@ export default function App() {
       <TextInput
         onChangeText={setName}
         value={name}
-        style= {styles.input}
+        style={styles.input}
       />
 
       <Text>O número é {number}.</Text>
+      <Button
+        onPress={changeNumber}
+        title='?'
+        color="#844"
+      />
     </View>
   );
 }
